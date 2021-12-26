@@ -20,26 +20,25 @@ public class Main {
 
 //      3. Вивести середнє значення масиву
         double totalValue = 0, averageValue;
-        for (int counter = 0, temp; counter < arrayOfRandomNumbers.length; counter++) {
-            temp = arrayOfRandomNumbers[counter];
-            totalValue += temp;
+        for (int arrayOfRandomNumber : arrayOfRandomNumbers) {
+            totalValue += arrayOfRandomNumber;
         }
         averageValue = totalValue / arrayOfRandomNumbers.length;
         System.out.println("3. Average value for array of random numbers is " + averageValue);
 
 //      4. Вивести суму всіх значень кратних 3
         double totalZeroFromDividingBy3 = 0;
-        for (int counter = 0; counter < arrayOfRandomNumbers.length; counter++) {
-            if (counter % 3 == 0) {
-                totalZeroFromDividingBy3 += counter;
+        for (int arrayOfRandomNumber : arrayOfRandomNumbers) {
+            if (arrayOfRandomNumber % 3 == 0) {
+                totalZeroFromDividingBy3 += arrayOfRandomNumber;
             }
         }
         System.out.println("4. Total of values duly divided by 3 is " + totalZeroFromDividingBy3);
 
 //      5. Вивести значення всіх парних індексів масиву
-        System.out.print("5. List of even indexes: ");
+        System.out.print("5. Values of even indexes: ");
         for (int counter = 2; counter < arrayOfRandomNumbers.length; counter += 2) {
-            System.out.print(counter + " ");
+            System.out.print(arrayOfRandomNumbers[counter] + " ");
         }
         System.out.println(" ");
 
@@ -49,18 +48,18 @@ public class Main {
 
 //      7. Вивести найменше значення в масиві
         System.out.println("7. The smallest value in the array of random numbers is "
-                + Arrays.toString(new int[]{arrayOfRandomNumbers[0]}));
+                + arrayOfRandomNumbers[0]);
 
 //      8. Вивести найбільше значення масиву
         System.out.println("8. The highest value in the array of random numbers is "
-                + Arrays.toString(new int[]{arrayOfRandomNumbers[arrayOfRandomNumbers.length - 1]}));
+                + arrayOfRandomNumbers[arrayOfRandomNumbers.length - 1]);
 
 //      9. Вивести суму значень всіх парних індексів
         int totalOfEvenIndexes = 0;
         for (int counter = 2; counter < arrayOfRandomNumbers.length; counter += 2) {
-            totalOfEvenIndexes += counter;
+            totalOfEvenIndexes += arrayOfRandomNumbers[counter];
         }
-        System.out.println("9. Total of even indexes is " + totalOfEvenIndexes);
+        System.out.println("9. The total of even indexes values is " + totalOfEvenIndexes);
 
 //      10. Вивести перших 20 символів з таблиці ASCII
         String[] firstTwentyChars = new String[19];
