@@ -89,21 +89,13 @@ public class Main {
         System.out.println("10. First 20 chars from ASCII table: \n" + Arrays.toString(firstTwentyChars));
 
 //      Заповнити масив рандомними числами, вивести їх, потім поміняти місцями парні з непарними
-        int[] arrayOfRandomNumbers2 = new Random().ints(15, 0, 100).toArray();
+        int[] arrayOfRandomNumbers2 = new Random().ints(20, 0, 100).toArray();
         System.out.println("\n11. Second array of random numbers: " + Arrays.toString(arrayOfRandomNumbers2));
 
-        int valueEvenTemp = 0, valueOddTemp = 0, indexTempOfEven = 0, indexTempOfOdd = 0;
-        for (int counter = 0; counter < arrayOfRandomNumbers2.length; counter++) {
-            if (arrayOfRandomNumbers2[counter] % 2 == 0) {
-                indexTempOfEven = counter;
-                valueEvenTemp = arrayOfRandomNumbers2[counter];
-
-            } else {
-                indexTempOfOdd = counter;
-                valueOddTemp = arrayOfRandomNumbers2[counter];
-            }
-            arrayOfRandomNumbers2[indexTempOfOdd] = valueEvenTemp;
-            arrayOfRandomNumbers2[indexTempOfEven] = valueOddTemp;
+        for (int i = 0, temp; i < arrayOfRandomNumbers2.length; i += 2) {
+            temp = arrayOfRandomNumbers2[i + 1];
+            arrayOfRandomNumbers2[i + 1] = arrayOfRandomNumbers2[i];
+            arrayOfRandomNumbers2[i] = temp;
         }
         System.out.println("11.1 Odd and even numbers replaced: " + Arrays.toString(arrayOfRandomNumbers2));
 
